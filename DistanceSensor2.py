@@ -2,7 +2,6 @@
 import RPi.GPIO as GPIO
 import time
 import statistics
-from scipy import stats
 import numpy as np
 
 
@@ -43,6 +42,7 @@ def MeasureDistances():
 
 # MeasureDistances()
 
+"""
 def RefineDistances(listDistances): 
     np.asarray(listDistances).astype(float)
     newDistances = []
@@ -51,6 +51,28 @@ def RefineDistances(listDistances):
         if (zscoreArray[i] <= 2.0000):
             newDistances.append(listDistances[i])
     return newDistances
+"""
+
+newData = []
+
+def zscore(myData): #Needs fixing
+	mu = np.mean(myData)
+	stdv = np.std(myData)
+
+	for value in myData:
+		zscoredVal = (value - mu)/stdv
+		newData.append(zscoredVal)
+
+	return newData 
+
+def RefineDistances(listDistances):
+    revisedDistances = []
+    np.asarray(listDistances).astype(float)
+    np.asarray(revisedDistances).astype(float)
+    for i in range(len(listDistances)):
+        if (abs(newData[i]) <= 2.0000):
+            revisedDistances.append(listDistances[i])
+    return revisedDistances
 
 # updatedDistances = RefineDistances(listDistances)
 
