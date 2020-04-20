@@ -10,7 +10,7 @@ def TurnServo(usuableAngle):
     servo.start(0)
 
     try:
-        for dc in range(50,usuableAngle,2):
+        for dc in range(0,usuableAngle,2):
             servo.ChangeDutyCycle(dc)
             time.sleep(0.2)
     except KeyboardInterrupt:
