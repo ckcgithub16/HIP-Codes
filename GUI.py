@@ -45,7 +45,7 @@ GetAngleBtn = tk.Button(window, text="Find Angle", command=PrintAngle)
 GetAngleBtn.grid(column=1, row=1)
 
 def MoveServo():
-    TurnServo(usuableAngle)
+    TurnServo(usuableAngle + 20) #Delete the 20
 
 MoveServoBtn = tk.Button(window, text="Turn Servo", command=MoveServo)
 MoveServoBtn.grid(column=1, row=2)
