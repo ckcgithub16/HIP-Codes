@@ -69,6 +69,8 @@ def RefineDistances(listDistances):
     revisedDistances = []
     np.asarray(listDistances).astype(float)
     np.asarray(revisedDistances).astype(float)
+    print("NewData", newData)
+    print("List Distancecs", len(listDistances))
     for i in range(len(listDistances)):
         if (abs(newData[i]) <= 2.0000):
             revisedDistances.append(listDistances[i])
