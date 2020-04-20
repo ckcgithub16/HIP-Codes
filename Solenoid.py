@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
+
 def OpenSolenoidValve():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(2, GPIO.OUT)
