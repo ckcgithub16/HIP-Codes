@@ -53,19 +53,21 @@ def RefineDistances(listDistances):
     return newDistances
 """
 
-newData = []
 
 def zscore(myData): #Needs fixing
-	mu = np.mean(myData)
+	newData = []
+    mu = np.mean(myData)
 	stdv = np.std(myData)
 
 	for value in myData:
 		zscoredVal = (value - mu)/stdv
 		newData.append(zscoredVal)
 
-	return newData 
+	return newData
+     
 
 def RefineDistances(listDistances):
+    newData = zscore(listDistances)
     revisedDistances = []
     np.asarray(listDistances).astype(float)
     np.asarray(revisedDistances).astype(float)
