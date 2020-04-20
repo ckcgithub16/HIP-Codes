@@ -4,9 +4,9 @@ import hip
 
 def TurnServo(usuableAngle):
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(18, GPIO.OUT)
+    GPIO.setup(12, GPIO.OUT)
     
-    servo = GPIO.PWM(18,500)
+    servo = GPIO.PWM(12,500)
     servo.start(0)
 
     try:
