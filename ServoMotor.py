@@ -3,7 +3,7 @@ import time as time
 import hip
 
 def TurnServo(usuableAngle):
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setup(18, GPIO.OUT)
     
     servo = GPIO.PWM(18,500)

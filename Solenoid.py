@@ -3,7 +3,7 @@ import time
 
 
 def OpenSolenoidValve():
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     GPIO.setup(2, GPIO.OUT)
     GPIO.output(2, GPIO.HIGH)
     time.sleep(2)
