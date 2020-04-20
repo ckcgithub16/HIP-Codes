@@ -55,16 +55,16 @@ def RefineDistances(listDistances):
 
 
 def zscore(myData): #Needs fixing
-	newData = []
+    newData = []
     mu = np.mean(myData)
-	stdv = np.std(myData)
+    stdv = np.std(myData)
 
-	for value in myData:
-		zscoredVal = (value - mu)/stdv
-		newData.append(zscoredVal)
+    for value in myData:
+        zscoredVal = (value - mu)/stdv
+        newData.append(zscoredVal)
 
-	return newData
-     
+    return newData
+
 
 def RefineDistances(listDistances):
     newData = zscore(listDistances)
