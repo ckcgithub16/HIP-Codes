@@ -7,7 +7,7 @@ import numpy as np
 
 def MeasureDistances():
     listDistances = []
-    for n in range(10):
+    for n in range(20):
         try:
             GPIO.setmode(GPIO.BOARD)
 
