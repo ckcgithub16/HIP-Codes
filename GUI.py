@@ -20,6 +20,7 @@ fireLbl.grid(column=2, row =3)
 
 finalDistance = 0
 angleInDutyCycles = 0
+launchDutyCycle = 0
 usuableAngle = 0
 
 
@@ -41,13 +42,14 @@ GetDistanceBtn.grid(column=1, row=0)
 def PrintAngle():
     launchAngle = FindAngle(finalDistance)
     launchDutyCycle = FindDutyCycles(launchAngle)
-    angleLbl.configure(text=str(usuableAngle))
+    angleLbl.configure(text=str(launchAngle))
     print("duty cycle", launchDutyCycle)
 
 GetAngleBtn = tk.Button(window, text="Find Angle", command=PrintAngle)
 GetAngleBtn.grid(column=1, row=1)
 
 def MoveServo():
+    angleInDutyCycles = launchDutyCycle
     TurnServo(angleInDutyCycles) #Delete the + 10
 
 MoveServoBtn = tk.Button(window, text="Turn Servo", command=MoveServo)
