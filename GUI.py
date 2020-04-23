@@ -49,8 +49,10 @@ GetAngleBtn = tk.Button(window, text="Find Angle", command=PrintAngle)
 GetAngleBtn.grid(column=1, row=1)
 
 def MoveServo():
-    angleInDutyCycles = launchDutyCycle
-    TurnServo(angleInDutyCycles) #Delete the + 10
+    launchAngle = FindAngle(finalDistance) #ADDED
+    launchDutyCycle = FindDutyCycles(launchAngle) #ADDED
+    print("launch angle is", launchAngle, "DUTY CYCLES are", launchDutyCycle)
+    TurnServo(launchDutyCycle) #Delete the + 10 if it is present
 
 MoveServoBtn = tk.Button(window, text="Turn Servo", command=MoveServo)
 MoveServoBtn.grid(column=1, row=2)
