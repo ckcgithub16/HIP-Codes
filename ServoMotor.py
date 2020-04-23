@@ -10,7 +10,7 @@ def TurnServo(angleInDutyCycles):
     servo.start(0)
 
     try:
-        for dc in range(5.0,angleInDutyCycles,1.0): 
+        for dc in range(5,angleInDutyCycles,1): #I was able to turn the servo specific angles when I swapped angleInDutyCycles for a float between 5.0 and 10.0 duty cycles
             servo.ChangeDutyCycle(dc)
             time.sleep(0.2)
     except KeyboardInterrupt:
