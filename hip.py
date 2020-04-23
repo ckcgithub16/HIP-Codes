@@ -12,7 +12,7 @@ def FindAngle(finalDistance):
 
 def FindDutyCycles(usuableAngle):
     angleInDutyCycles = ((((usuableAngle/180) + 1) / 20) + 7) #DELETE THE + 7
-    int(angleInDutyCycles)
+    angleInDutyCycles = int(angleInDutyCycles)
     return angleInDutyCycles
 
 
