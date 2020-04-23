@@ -9,12 +9,10 @@ def TurnServo(angleInDutyCycles):
     servo = GPIO.PWM(12,500)
     servo.start(0)
 
-    try:
-        for dc in range(5,angleInDutyCycles,1): #I was able to turn the servo specific angles when I swapped angleInDutyCycles for a float between 5.0 and 10.0 duty cycles
-            servo.ChangeDutyCycle(dc)
-            time.sleep(0.2)
-    except KeyboardInterrupt:
-        pass
+    for dc in range(5,angleInDutyCycles,1): #I was able to turn the servo specific angles when I swapped angleInDutyCycles for a float between 5.0 and 10.0 duty cycles
+        servo.ChangeDutyCycle(dc)
+        time.sleep(0.2)
+
     servo.stop()
     GPIO.cleanup()
 
