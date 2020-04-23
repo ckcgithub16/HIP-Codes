@@ -10,4 +10,9 @@ def FindAngle(finalDistance):
         degrees = 45
     return degrees
 
+def FindDutyCycles(usuableAngle):
+    angleInDutyCycles = (((usuableAngle/180.0) + 1.0) / 20)
+    return angleInDutyCycles
+
+
 # usuableAngle = FindAngle(DistanceSensor2.finalDistance)

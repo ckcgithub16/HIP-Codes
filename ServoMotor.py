@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time as time
 import hip
 
-def TurnServo(usuableAngle):
+def TurnServo(angleInDutyCycles):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(12, GPIO.OUT)
     
@@ -10,7 +10,7 @@ def TurnServo(usuableAngle):
     servo.start(0)
 
     try:
-        for dc in range(0,usuableAngle,2):
+        for dc in range(5,angleInDutyCycles,1):
             servo.ChangeDutyCycle(dc)
             time.sleep(0.2)
     except KeyboardInterrupt:

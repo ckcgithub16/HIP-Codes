@@ -1,6 +1,7 @@
 from DistanceSensor2 import MeasureDistances, RefineDistances, MeanlDistance
 from ServoMotor import TurnServo
 from hip import FindAngle
+from hip import FindDutyCycles
 from Solenoid import OpenSolenoidValve
 import tkinter as tk
 
@@ -18,6 +19,7 @@ fireLbl = tk.Label(window, text="")
 fireLbl.grid(column=2, row =3)
 
 finalDistance = 0
+angleInDutyCycles = 0
 usuableAngle = 0
 
 
@@ -37,15 +39,16 @@ GetDistanceBtn = tk.Button(window, text="Get Distance", command=PrintDistance)
 GetDistanceBtn.grid(column=1, row=0)
 
 def PrintAngle():
-    usuableAngle = FindAngle(finalDistance)
+    launchAngle = FindAngle(finalDistance)
+    launchDutyCycle = FindDutyCycles(launchAngle)
     angleLbl.configure(text=str(usuableAngle))
-
+    print("duty cycle", launchDutyCycle)
 
 GetAngleBtn = tk.Button(window, text="Find Angle", command=PrintAngle)
 GetAngleBtn.grid(column=1, row=1)
 
 def MoveServo():
-    TurnServo(usuableAngle + 20) #Delete the 20
+    TurnServo(angleInDutyCycles + 10) #Delete the + 10
 
 MoveServoBtn = tk.Button(window, text="Turn Servo", command=MoveServo)
 MoveServoBtn.grid(column=1, row=2)
