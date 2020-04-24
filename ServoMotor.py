@@ -11,18 +11,20 @@ def TurnServo(angleInDutyCycles):
     #Set pin 12 as an output pin
     GPIO.setup(12, GPIO.OUT)
     
-    servo = GPIO.PWM(12,50)
+    
+    servo = GPIO.PWM(12,500)
     servo.start(0)
 
     #Prints the duty cycle the servo will be set to 
     print("Code is RUNNING", angleInDutyCycles)
 
     #Assuming servo starts at 0 degree angle, increases the duty cycles by 1 until the duty cycle corresponding with the launch angle is reached
-    for dc in range(5,7,1): #I was able to turn the servo specific angles when I swapped angleInDutyCycles for a value between 5 and 10 duty cycles
+    for dc in range(180): #I was able to turn the servo specific angles when I swapped angleInDutyCycles for a value between 5 and 10 duty cycles
         #servo.changeDutyCycle() takes duty cycles as a parameter
-        servo.ChangeDutyCycle(dc)
+        # servo.ChangeDutyCycle(dc)
+        servo.setPositionServo(12, 180)
         print("dc is", dc)
-        time.sleep(0.2)
+        # time.sleep(0.2)
 
     #Stop servo once at desired duty cycle/angle
     servo.stop()
