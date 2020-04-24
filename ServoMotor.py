@@ -12,7 +12,7 @@ def TurnServo(angleInDutyCycles):
     GPIO.setup(32, GPIO.OUT)
     
     
-    servo = GPIO.PWM(32,500)
+    servo = GPIO.PWM(32,50)
     servo.start(0)
 
     #Prints the duty cycle the servo will be set to 
