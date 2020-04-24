@@ -8,11 +8,11 @@ def TurnServo(angleInDutyCycles):
     #Choose BOARD (breadboard) as construction base for project 
     GPIO.setmode(GPIO.BOARD)
 
-    #Set pin 12 as an output pin
-    GPIO.setup(12, GPIO.OUT)
+    #Set pin 32 as an output pin
+    GPIO.setup(32, GPIO.OUT)
     
     
-    servo = GPIO.PWM(12,500)
+    servo = GPIO.PWM(32,500)
     servo.start(0)
 
     #Prints the duty cycle the servo will be set to 
