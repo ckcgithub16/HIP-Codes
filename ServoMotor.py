@@ -1,20 +1,11 @@
 import RPi.GPIO as GPIO
 import time as time
 import LaunchAngle
+from GUI import servo
 
 #Function to turn a servo motor to the launch angle
 def TurnServo(angleInDutyCycles):
     
-    #Choose BOARD (breadboard) as construction base for project 
-    GPIO.setmode(GPIO.BOARD)
-
-    #Set pin 32 as an output pin
-    GPIO.setup(12, GPIO.OUT)
-    
-    
-    servo = GPIO.PWM(12,50)
-    servo.start(0)
-
     #Prints the duty cycle the servo will be set to 
     print("Code is RUNNING", angleInDutyCycles)
 

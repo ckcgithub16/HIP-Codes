@@ -3,12 +3,6 @@ import time
 
 #Function to open the solenoid valve
 def OpenSolenoidValve():
-    
-    #Choose BOARD (breadboard) as construction base for project 
-    GPIO.setmode(GPIO.BOARD)
-    
-    #Set pin 13 as an output pin
-    GPIO.setup(13, GPIO.OUT)
 
     #Set the pin state of pin 13 to high to open the solenoid
     GPIO.output(13, GPIO.HIGH)

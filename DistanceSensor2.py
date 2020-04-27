@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import statistics
 import numpy as np
+from GUI import PIN_TRIGGER, PIN_ECHO
 
 #Function to measure the distance to a target 20 times and compiles the distances into a list
 def MeasureDistances():
@@ -11,17 +12,6 @@ def MeasureDistances():
     #Collect 20 distances using a list
     for n in range(20):
         try:
-
-            #Choose BOARD (breadboard) as construction base for project 
-            GPIO.setmode(GPIO.BOARD)
-
-            #Set the pin header 7 to be the trigger pin and pin 11 to be the echo pin
-            PIN_TRIGGER = 7
-            PIN_ECHO = 11
-
-            #Sets pin 7 to be output pin and pin 11 to be input pin
-            GPIO.setup(PIN_TRIGGER, GPIO.OUT)
-            GPIO.setup(PIN_ECHO, GPIO.IN)
 
             #Set pin 11 state to low
             GPIO.output(PIN_TRIGGER, GPIO.LOW)
