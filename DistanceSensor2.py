@@ -40,7 +40,7 @@ def MeasureDistances():
 
         finally:
             #Resets pins to their original state
-            GPIO.cleanup()
+            #GPIO.cleanup()
 
     return listDistances
 

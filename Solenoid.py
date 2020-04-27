@@ -15,4 +15,4 @@ def OpenSolenoidValve():
     time.sleep(1)
 
     #Reset the pin states of all pins
-    GPIO.cleanup()
+    #GPIO.cleanup()

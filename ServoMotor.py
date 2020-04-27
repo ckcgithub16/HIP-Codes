@@ -21,4 +21,4 @@ def TurnServo(angleInDutyCycles):
     servo.stop()
     
     #Resets the pin states
-    GPIO.cleanup()
+    #GPIO.cleanup()
