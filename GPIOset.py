@@ -17,7 +17,6 @@ GPIO.setup(PIN_ECHO, GPIO.IN)
 #Set pin 12 (for servo) as an output pin
 GPIO.setup(12, GPIO.OUT)
 servo = GPIO.PWM(12,50)
-servo.start(0)
 
 #Set pin 13 (for Solenoid) as an output pin
 GPIO.setup(13, GPIO.OUT)
