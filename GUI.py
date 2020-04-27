@@ -85,7 +85,7 @@ def Fire():
     
 #Establish and place the Fire button. When it is clicked, run Fire()
 FireBtn = tk.Button(window, text="Fire", command=Fire)
-FireBtn.grid(column=1, row=3)
+FireBtn.grid(column=1, row=4)
 
 #Create infinite loop so GUI does not close unexpectedly
 window.mainloop()
