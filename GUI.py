@@ -73,7 +73,7 @@ def MoveServo():
     launchDutyCycle = FindDutyCycles(launchAngle)
     print("launch angle is", launchAngle, "DUTY CYCLES are", launchDutyCycle)
     TurnServo(launchDutyCycle)
-    
+
     #Stop servo once at desired duty cycle/angle
     servo.stop()
 
@@ -92,4 +92,5 @@ FireBtn.grid(column=1, row=4)
 
 #Create infinite loop so GUI does not close unexpectedly
 window.mainloop()
+changeDutyCycles(5)
 GPIO.cleanup()
