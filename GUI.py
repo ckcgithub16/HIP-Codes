@@ -92,5 +92,5 @@ FireBtn.grid(column=1, row=4)
 
 #Create infinite loop so GUI does not close unexpectedly
 window.mainloop()
-changeDutyCycles(5)
+servo.changeDutyCycles(5)
 GPIO.cleanup()
