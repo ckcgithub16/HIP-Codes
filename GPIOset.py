@@ -1,4 +1,6 @@
 import RPi.GPIO as GPIO
+
+
 #*****Set up GPIO for all hardware******#
 
 #Choose BOARD (breadboard) as construction base for project

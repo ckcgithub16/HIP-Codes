@@ -11,37 +11,32 @@ def MeasureDistances():
     
     #Collect 20 distances using a list
     for n in range(20):
-        try:
+    
+        #Set pin 11 state to low
+        GPIO.output(PIN_TRIGGER, GPIO.LOW)
 
-            #Set pin 11 state to low
-            GPIO.output(PIN_TRIGGER, GPIO.LOW)
+        time.sleep(0.5)
 
-            time.sleep(0.5)
+        #Send ultrasonic signal out by setting the pin state of pin 7 to high
+        GPIO.output(PIN_TRIGGER, GPIO.HIGH)
 
-            #Send ultrasonic signal out by setting the pin state of pin 7 to high
-            GPIO.output(PIN_TRIGGER, GPIO.HIGH)
+        time.sleep(0.00001)
 
-            time.sleep(0.00001)
+        #Set the pin state of pin 7 to low
+        GPIO.output(PIN_TRIGGER, GPIO.LOW)
 
-            #Set the pin state of pin 7 to low
-            GPIO.output(PIN_TRIGGER, GPIO.LOW)
+        while GPIO.input(PIN_ECHO)==0:
+                pulse_start_time = time.time()
+        while GPIO.input(PIN_ECHO)==1:
+                pulse_end_time = time.time()
 
-            while GPIO.input(PIN_ECHO)==0:
-                    pulse_start_time = time.time()
-            while GPIO.input(PIN_ECHO)==1:
-                    pulse_end_time = time.time()
+        #Calculate the distances
+        pulse_duration = pulse_end_time - pulse_start_time
+        distance = round(pulse_duration * 17150, 2)
 
-            #Calculate the distances
-            pulse_duration = pulse_end_time - pulse_start_time
-            distance = round(pulse_duration * 17150, 2)
-
-            #Add the distances to a list
-            listDistances.append(distance)
-
-        finally:
-            #Resets pins to their original state
-            #GPIO.cleanup()
-
+        #Add the distances to a list
+        listDistances.append(distance)
+            
     return listDistances
 
 # MeasureDistances()
