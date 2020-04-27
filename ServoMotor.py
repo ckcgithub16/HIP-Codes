@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time as time
 import LaunchAngle
-from GUI import servo
+from GPIOset import *
 
 #Function to turn a servo motor to the launch angle
 def TurnServo(angleInDutyCycles):

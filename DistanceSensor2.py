@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 import statistics
 import numpy as np
-from GUI import PIN_TRIGGER, PIN_ECHO
+from GPIOset import * 
 
 #Function to measure the distance to a target 20 times and compiles the distances into a list
 def MeasureDistances():
