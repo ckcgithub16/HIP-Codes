@@ -73,6 +73,9 @@ def MoveServo():
     launchDutyCycle = FindDutyCycles(launchAngle)
     print("launch angle is", launchAngle, "DUTY CYCLES are", launchDutyCycle)
     TurnServo(launchDutyCycle)
+    
+    #Stop servo once at desired duty cycle/angle
+    servo.stop()
 
 #Establish and place the MoveServo button. When it is clicked, run MoveServo()
 MoveServoBtn = tk.Button(window, text="Turn Servo", command=MoveServo)
