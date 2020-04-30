@@ -23,7 +23,7 @@ angleLbl.grid(column=2, row =1)
 
 #Create and place a label that will display whether or not the projectile has been fired
 fireLbl = tk.Label(window, text="")
-fireLbl.grid(column=2, row =3)
+fireLbl.grid(column=2, row =4)
 
 #Initializing of the global variables
 finalDistance = 0
@@ -90,7 +90,8 @@ def Fire():
     for n in range(launchDutyCycle, 2, -1):
         TurnServo(n-1)
         time.sleep(0.2)
-    
+        print("Servo is at", n)
+
 #Establish and place the Fire button. When it is clicked, run Fire()
 FireBtn = tk.Button(window, text="Fire", command=Fire)
 FireBtn.grid(column=1, row=4)
