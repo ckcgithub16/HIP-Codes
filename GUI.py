@@ -5,6 +5,7 @@ from LaunchAngle import FindAngle
 from LaunchAngle import FindDutyCycles
 from Solenoid import OpenSolenoidValve
 import tkinter as tk
+import time
 from GPIOset import *
 
 #Create a window (GUI), title it, and set its dimensions using tkinter  
@@ -85,6 +86,10 @@ MoveServoBtn.grid(column=1, row=3)
 def Fire():
     OpenSolenoidValve()
     fireLbl.configure(text="Fired")
+    time.sleep(0.2)
+    for n in range(launchDutyCycle, 2, -1):
+        TurnServo(n-1)
+        time.sleep(0.2)
     
 #Establish and place the Fire button. When it is clicked, run Fire()
 FireBtn = tk.Button(window, text="Fire", command=Fire)

@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import time as time
+import time
 import LaunchAngle
 from GPIOset import *
 

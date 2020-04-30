@@ -20,7 +20,7 @@ def MeasureDistances():
         #Send ultrasonic signal out by setting the pin state of pin 7 to high
         GPIO.output(PIN_TRIGGER, GPIO.HIGH)
 
-        time.sleep(0.00001)
+        #time.sleep(0.00001)
 
         #Set the pin state of pin 7 to low
         GPIO.output(PIN_TRIGGER, GPIO.LOW)
