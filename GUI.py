@@ -89,9 +89,10 @@ def Fire():
     time.sleep(0.2)
     print("Can you see this message?") #added b/se loop wasn't running
     for n in range(launchDutyCycle, 2, -1):
-        TurnServo(n-1)
+        d = n-1 #added a variable d to increment the turning
+        TurnServo(d)
         time.sleep(0.2)
-        print("Servo is at", n)
+        print("Servo is at", d)
     
     print("What about this message?")#added b/se loop wasn't running
 
