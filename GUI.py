@@ -87,6 +87,8 @@ def Fire():
     OpenSolenoidValve()
     fireLbl.configure(text="Fired")
     time.sleep(0.2)
+    launchAngle = FindAngle(finalDistance)
+    launchDutyCycle = FindDutyCycles(launchAngle)
     print("LaunchDutyCycle is", launchDutyCycle) #added b/se loop wasn't running
     for n in range(launchDutyCycle, 2, -1):
         d = n-1 #added a variable d to increment the turning
