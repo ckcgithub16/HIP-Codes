@@ -7,7 +7,7 @@ def OpenSolenoidValve():
     #Set the pin state of pin 13 to high to open the solenoid
     GPIO.output(13, GPIO.HIGH)
 
-    time.sleep(1)
+    time.sleep(.5)
 
     #Set the pin state of pin 13 to low
     GPIO.output(13, GPIO.LOW)
