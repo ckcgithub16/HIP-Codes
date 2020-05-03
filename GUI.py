@@ -93,7 +93,7 @@ def Fire():
     for n in range(launchDutyCycle, 2, -1):
         d = n-1 #added a variable d to increment the turning
         TurnServo(d)
-        time.sleep(0.2)
+        time.sleep(0.5)
         print("Servo is at", d)
     
     print("What about this message?")#added b/se loop wasn't running
