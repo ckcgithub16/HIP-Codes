@@ -27,7 +27,6 @@ fireLbl.grid(column=2, row =4)
 
 #Initializing of the global variables
 finalDistance = 0
-angleInDutyCycles = 0
 launchDutyCycle = 0
 usuableAngle = 0
 
@@ -43,9 +42,9 @@ def PrintDistance():
     ClearLabels()
 
     #Determine and set the final distance to finalDistance
-    listDistances = MeasureDistances()
-    updatedDistances = RefineDistances(listDistances)
-    finalDistance = MeanlDistance(updatedDistances)
+    listOfDistances = MeasureDistances()
+    updatedListOfDistances = RefineDistances(listOfDistances)
+    finalDistance = MeanlDistance(updatedListOfDistances)
     
     #Display the final distance from the target on the GUI
     distanceLbl.configure(text=str(finalDistance))
@@ -70,8 +69,8 @@ GetAngleBtn.grid(column=1, row=1)
 
 #Function to move the servo
 def MoveServo():
-    launchAngle = FindAngle(finalDistance)
-    launchDutyCycle = FindDutyCycles(launchAngle)
+    #launchAngle = FindAngle(finalDistance)
+    #launchDutyCycle = FindDutyCycles(launchAngle)
     print("launch angle is", launchAngle, "DUTY CYCLES are", launchDutyCycle)
     TurnServo(launchDutyCycle)
 
@@ -87,8 +86,8 @@ def Fire():
     OpenSolenoidValve()
     fireLbl.configure(text="Fired")
     time.sleep(0.2)
-    launchAngle = FindAngle(finalDistance)
-    launchDutyCycle = FindDutyCycles(launchAngle)
+    #launchAngle = FindAngle(finalDistance)
+    #launchDutyCycle = FindDutyCycles(launchAngle)
     print("LaunchDutyCycle is", launchDutyCycle) #added b/se loop wasn't running
     for n in range(launchDutyCycle, 2, -1):
         d = n-1 #added a variable d to increment the turning
