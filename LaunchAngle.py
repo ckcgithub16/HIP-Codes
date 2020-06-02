@@ -6,14 +6,16 @@ import RPi.GPIO as GPIO
 def FindAngle(finalDist):
     finalDist = finalDist / 100
     angle = (1/2) * (math.asin((9.8 * finalDist)/36.976))
-    
+    print("angle", angle)
+
     #Convert the variable "angle" from radians to degress  
     degrees = angle * (180 / math.pi)
-    
+    print("degrees1", degrees)
+
     #Sets any angle greater than 45 degrees to 45 degrees b/se 45 degrees results in max distance
     if (degrees > 45):
         degrees = 45
-    print(degrees)
+    print("degrees2", degrees)
     return degrees
 
 #Function to convert angle into duty cycles
