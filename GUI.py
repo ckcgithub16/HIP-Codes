@@ -55,8 +55,8 @@ GetDistanceBtn = tk.Button(window, text="Get Distance", command=PrintDistance)
 GetDistanceBtn.grid(column=1, row=0)
 
 #Function to print the launch angle on the GUI
-def PrintAngle():
-    launchAngle = FindAngle(finalDistance)
+def PrintAngle(finallDistance):
+    launchAngle = FindAngle(finallDistance)
     launchDutyCycle = FindDutyCycles(launchAngle)
     
     angleLbl.configure(text=str(launchAngle))
@@ -65,7 +65,7 @@ def PrintAngle():
     print("duty cycle", launchDutyCycle)
 
 #Establish and place the GetAngle button. When it is clicked, run PrintAngle()
-GetAngleBtn = tk.Button(window, text="Find Angle", command=PrintAngle)
+GetAngleBtn = tk.Button(window, text="Find Angle", command=PrintAngle(finalDistance))
 GetAngleBtn.grid(column=1, row=1)
 
 #Function to move the servo
