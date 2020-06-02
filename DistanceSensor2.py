@@ -46,6 +46,7 @@ def zscore(myData):
     newData = []
     mu = np.mean(myData)
     stdv = np.std(myData)
+    print("Average distance", mu)
 
     #Calculate z-score for each distance and add the z-score to newData
     for value in myData:

@@ -16,9 +16,9 @@ def FindAngle(finalDistance):
 
 #Function to convert angle into duty cycles
 def FindDutyCycles(usuableAngle):
-    
+    usuableAngle = 45
     # I added 7 to the formula to test the servo's movement b/se the distances I measured corresponded to duty cycles of 0
-    angleInDutyCycles = ((((usuableAngle/180) + 1) / 20) + 5) 
+    angleInDutyCycles = ((((usuableAngle/180) + 1) / 20)) 
 
     #Set variable type of angleInDutyCycles to integer b/se the range() function in ServoMotor.py only takes integer parameters 
     angleInDutyCycles = int(angleInDutyCycles)
