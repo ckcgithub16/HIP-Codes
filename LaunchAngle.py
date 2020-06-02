@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 #Function to calculate the launch angle in degrees based on distance from the target
 def FindAngle(finalDist):
     finalDist = finalDist / 1000
-    angle = (1/2) * (math.asin((9.8 * finalDist)/6.08079))
+    angle = (1/2) * (math.asin((9.8 * finalDist)/36.976))
     
     #Convert the variable "angle" from radians to degress  
     degrees = angle * (180 / math.pi)
