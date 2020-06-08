@@ -12,17 +12,11 @@ def FindAngle(finalDist):
     degrees = angle * (180 / math.pi)
     print("degrees1", degrees)
 
-    #Sets any angle greater than 45 degrees to 45 degrees b/se 45 degrees results in max distance
-    if (degrees > 45):
-        degrees = 45
-    print("degrees2", degrees)
-    return degrees
-
 #Function to convert angle into duty cycles
 def FindDutyCycles(angleInput):
 
     # Set angleInDutyCycles to the duty cycles of the launch angle
-    angleInDutyCycles = (((((angleInput/180) + 1) / 20)) * 100) - 5
+    angleInDutyCycles = (((((angleInput/180) + 1) / 20)) * 100)
 
     angleInDutyCycles = float(angleInDutyCycles)
     return angleInDutyCycles
