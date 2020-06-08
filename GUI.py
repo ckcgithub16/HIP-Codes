@@ -26,10 +26,9 @@ fireLbl = tk.Label(window, text="")
 fireLbl.grid(column=2, row =4)
 
 #Initializing of the global variables
-finalDistance = 0
-launchDutyCycle = 0
-usuableAngle = 0
-launchAngle = 0
+finalDistance = 0.0
+launchDutyCycle = 0.0
+launchAngle = 0.0
 
 #Function to clear all displayed values
 def ClearLabels():
@@ -45,6 +44,7 @@ def PrintDistance():
     #Determine and set the final distance to finalDistance
     listOfDistances = MeasureDistances()
     updatedListOfDistances = RefineDistances(listOfDistances)
+    global finalDistance
     finalDistance = MeanlDistance(updatedListOfDistances)
     
     #Display the final distance from the target on the GUI
@@ -57,6 +57,8 @@ GetDistanceBtn.grid(column=1, row=0)
 
 #Function to print the launch angle on the GUI
 def PrintAngle():
+    global finalDistance
+    global launchDutyCycle
     print("finaldistan2", finalDistance)
     launchAngle = FindAngle(finalDistance)
     print("launchAngle", launchAngle)
@@ -73,9 +75,8 @@ GetAngleBtn.grid(column=1, row=1)
 
 #Function to move the servo
 def MoveServo():
-    #launchAngle = FindAngle(finalDistance)
-    #launchDutyCycle = FindDutyCycles(launchAngle)
-    print("launch angle is", launchAngle, "DUTY CYCLES are", launchDutyCycle)
+    global launchDutyCycle
+    print("DUTY CYCLES are", launchDutyCycle)
     TurnServo(launchDutyCycle)
 
     #Stop servo once at desired duty cycle/angle
@@ -90,9 +91,9 @@ def Fire():
     OpenSolenoidValve()
     fireLbl.configure(text="Fired")
     time.sleep(0.2)
-    #launchAngle = FindAngle(finalDistance)
-    #launchDutyCycle = FindDutyCycles(launchAngle)
+    global launchDutyCycle
     print("LaunchDutyCycle is", launchDutyCycle) #added b/se loop wasn't running
+
     for n in range(launchDutyCycle, 2, -1):
         d = n-1 #added a variable d to increment the turning
         TurnServo(d)
