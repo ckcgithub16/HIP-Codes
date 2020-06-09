@@ -28,7 +28,6 @@ fireLbl.grid(column=2, row =4)
 #Initializing of the global variables
 finalDistance = 0.0
 launchDutyCycle = 0.0
-launchAngle = 0.0
 
 #Function to clear all displayed values
 def ClearLabels():

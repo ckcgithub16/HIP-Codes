@@ -11,6 +11,7 @@ def FindAngle(finalDist):
     #Convert the variable "angle" from radians to degress  
     degrees = angle * (180 / math.pi)
     print("degrees1", degrees)
+    return degrees
 
 #Function to convert angle into duty cycles
 def FindDutyCycles(angleInput):
