@@ -17,7 +17,7 @@ def FindAngle(finalDist):
 def FindDutyCycles(angleInput):
 
     # Set angleInDutyCycles to the duty cycles of the launch angle
-    angleInDutyCycles = 12 #(((((angleInput/180) + 1) / 20)) * 100)
+    angleInDutyCycles = 11.5 #(((((angleInput/180) + 1) / 20)) * 100)
 
     angleInDutyCycles = float(angleInDutyCycles)
     return angleInDutyCycles
