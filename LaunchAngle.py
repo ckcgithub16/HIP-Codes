@@ -16,8 +16,8 @@ def FindAngle(finalDist):
 #Function to convert angle into duty cycles
 def FindDutyCycles(angleInput):
 
-    # Set angleInDutyCycles to the duty cycles of the launch angle
-    angleInDutyCycles = 2 #(((((angleInput/180) + 1) / 20)) * 100)
+    # Set angleInDutyCycles to the duty cycles of the launch angle; 2dc is the servo lower limit. 11.80 is about the upper limit.
+    angleInDutyCycles = (((((angleInput/180) + 1) / 20)) * 100)
 
     angleInDutyCycles = float(angleInDutyCycles)
     return angleInDutyCycles
