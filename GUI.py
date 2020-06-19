@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from DistanceSensor2 import MeasureDistances, RefineDistances, MeanlDistance
 from ServoMotor import TurnServo
 from LaunchAngle import FindAngle
-from LaunchAngle import FindDutyCycles
+from LaunchAngle import GetDutyCycleFromAngle
 from Solenoid import OpenSolenoidValve
 import tkinter as tk
 import time
@@ -61,7 +61,7 @@ def PrintAngle():
     print("finaldistan2", finalDistance)
     launchAngle = FindAngle(finalDistance)
     print("launchAngle", launchAngle)
-    launchDutyCycle = FindDutyCycles(launchAngle)
+    launchDutyCycle = GetDutyCycleFromAngle(launchAngle)
     
     angleLbl.configure(text=str(launchAngle))
     
